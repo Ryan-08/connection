@@ -5,6 +5,15 @@
     
     if ($result->num_rows > 0){
         // output data of each row
+       ?> <ul class="list-group list-group-horizontal-sm">
+        <li class="list-group-item item">ID</li>
+        <li class="list-group-item">Nama</li>
+        <li class="list-group-item">NIM</li>
+        <li class="list-group-item item">JK</li>
+        <li class="list-group-item">Dosen Wali</li> 
+        <li class="list-group-item buton">Update</li>    
+    </ul>
+    <?php
             while($row = $result->fetch_assoc()) { ?>   
                 <ul class="list-group list-group-horizontal-sm">                 
                     <li class="list-group-item item"><?php echo $row["ID"]?></li>
@@ -22,5 +31,8 @@
                     </li>     
                 </ul>
     <?php   }
-        }            
+        }   
+        else{
+            echo "<h3 style='text-align:center;'>Database Kosong</h3>";
+        }         
         $conn->close();  ?> 

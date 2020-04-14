@@ -6,21 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="../font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../bootstrap-4.4.1-dist/css/bootstrap.min.css">
 
     <style>
+        body{
+            background-color: navy;
+            color: white;
+        }
         .main{
             padding: 100px;
         }          
     </style>
 
-    <title>Document</title>
+    <title>Add</title>
 </head>
 <body>
 <div class="main">
-<a href="index.php">Home</a>
+<a href="index.php">Beranda</a>
 <h3>Tambahkan Mahasiswa</h3>
         <form action="insert.php" method="get">
             <div class="form-group row">
@@ -53,8 +59,8 @@
                     <?php include "dosen.php";?>                                         
                 </select>
             </div>
-            <div class="form-group row">                        
-                <input type="submit" name="Submit" class="btn btn-primary"></input>
+            <div class="form-group col">                        
+                <input type="submit" name="Submit" class="btn btn-primary" value="Tambah"></input>
             </div>
         </form>
     </div>   

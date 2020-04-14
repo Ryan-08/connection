@@ -11,11 +11,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <style>
+        body{
+            background-color: navy;
+        }
         .main{
-            padding: 100px;
+            padding: 100px;            
         }  
         li{            
-            width: 267px;
+            width: 267px;        
         }         
         .myBtn{
             padding: 20px 18px;
@@ -49,10 +52,10 @@
         .trash:hover{
             background-color: red;
             color: white;
-        }       
+        }               
     </style>
 
-    <title>Hello, world!</title>
+    <title>Database</title>
   </head>
   <body>    
     <div class="main">
@@ -62,15 +65,7 @@
                     Tambahkan Mahasiswa
                 </button>
             </a>
-        </div>
-        <ul class="list-group list-group-horizontal-sm">
-            <li class="list-group-item item">ID</li>
-            <li class="list-group-item">Nama</li>
-            <li class="list-group-item">NIM</li>
-            <li class="list-group-item item">JK</li>
-            <li class="list-group-item">Dosen Wali</li> 
-            <li class="list-group-item buton">Update</li>    
-        </ul>
+        </div>       
         <?php include "my.php";?>               
     </div>   
       
