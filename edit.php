@@ -4,17 +4,16 @@
 include "conn.php";
 $id = $_GET['id'];
 
-$sql = "SELECT mahasiswa.ID, mahasiswa.nama, nim,jenis_kelamin, dosen_wali.nama AS nama_dosen FROM mahasiswa INNER JOIN dosen_wali ON mahasiswa.id_doswal = dosen_wali.id WHERE mahasiswa.ID = $id";
+$sql = "SELECT mahasiswa.ID, mahasiswa.nama AS Nama, nim,jenis_kelamin, dosen_wali.nama AS nama_dosen FROM mahasiswa INNER JOIN dosen_wali ON mahasiswa.id_doswal = dosen_wali.id WHERE mahasiswa.ID = $id";
 $result = $conn->query($sql);
 
 while($user_data = $result->fetch_assoc())
 {
     $id = $user_data['ID'];
-    $nama = $user_data['nama'];
+    $nama = $user_data['Nama'];
     $nim = $user_data['nim'];
     $jk = $user_data['jenis_kelamin'];
     $doswal = $user_data['nama_dosen'];
-    $temp = explode(" - ", $doswal);   
 }
 
     $male_status = 'unchecked';
@@ -43,16 +42,12 @@ while($user_data = $result->fetch_assoc())
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <style>
-        body{
-            background-color: navy;
-            color: white;
-        }
         .main{
             padding: 100px;
         }          
     </style>
 
-    <title>Edit</title>
+    <title>Sunting</title>
 </head>
 <body>
 <div class="main">
@@ -62,23 +57,23 @@ while($user_data = $result->fetch_assoc())
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Nama</label>
                 <div class="col-sm-10">
-                    <input type="input" class="form-control" name="Nama" <?php echo "value=", $nama?>>
+                    <input type="input" class="form-control" name="Nama" value="<?php echo $nama;?>">                    
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">NIM</label>
                 <div class="col-sm-10">
-                    <input type="input" class="form-control" name="Nim" <?php echo "value=", $nim?>>
+                    <input type="input" class="form-control" name="Nim" <?php echo "value=", $nim;?>>
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Jenis kelamin</label>
                 <div class="form-check form-check-inline">                        
-                    <input class="form-check-input" type="radio" name="Jk" id="inlineRadio1" value="1" <?php echo $male_status?>>
+                    <input class="form-check-input" type="radio" name="Jk" id="inlineRadio1" value="1" <?php echo $male_status;?>>
                     <label class="form-check-label" for="inlineRadio1">Laki-laki</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="Jk" id="inlineRadio2" value="2" <?php echo $female_status?>>
+                    <input class="form-check-input" type="radio" name="Jk" id="inlineRadio2" value="2" <?php echo $female_status;?>>
                     <label class="form-check-label" for="inlineRadio2">Perempuan</label>
                 </div>
             </div>   
@@ -88,13 +83,13 @@ while($user_data = $result->fetch_assoc())
                     <option>Pilih Dosen</option> 
                     <?php
                         include "conn.php";        
-                        $sql = "SELECT nama, id FROM dosen_wali";
+                        $sql = "SELECT nama FROM dosen_wali";
                         $result = $conn->query($sql);       
                         if ($result->num_rows > 0){
                             // output data of each row
                                 while($row = $result->fetch_assoc()) { 
-                                    if($row["nama"]==$temp[0]) {
-                                         echo '<option selected>', $row['nama'], ' - ', $row['id'],'</option>';                                        
+                                    if($row["nama"]==$doswal) {
+                                         echo '<option selected>', $row['nama'],'</option>';                                        
                                     }
                                     else{
                                         echo '<option>', $row["nama"],'</option>';                                        
@@ -105,7 +100,7 @@ while($user_data = $result->fetch_assoc())
                 </select>
             </div>
             <div class="form-group row">  
-                <input type="hidden" class="form-control" name="myID" <?php echo "value=", $id?>>                      
+                <input type="hidden" class="form-control" name="myID" <?php echo "value=", $id;?>>                      
                 <input type="submit" name="Edit" class="btn btn-primary" value="Sunting"></input>
             </div>
         </form>

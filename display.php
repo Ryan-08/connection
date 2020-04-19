@@ -11,7 +11,7 @@
         <li class="list-group-item">NIM</li>
         <li class="list-group-item item">JK</li>
         <li class="list-group-item">Dosen Wali</li> 
-        <li class="list-group-item buton">Update</li>    
+        <li class="list-group-item buton">Aksi</li>    
     </ul>
     <?php
             while($row = $result->fetch_assoc()) { ?>   

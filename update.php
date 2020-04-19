@@ -4,11 +4,10 @@
         $id = $_POST['myID'];       
         $name = $_POST['Nama'];
         $NIM = $_POST['Nim'];
-        $JK = $_POST['Jk'];
+       echo $JK = $_POST['Jk'];
         $doswal = $_POST['select'];
-        $temp = explode($doswal);
 
-        $sql = "SELECT id FROM `dosen_wali` WHERE `nama` LIKE '$temp[0]'";    
+        $sql = "SELECT id FROM `dosen_wali` WHERE `nama` LIKE '$doswal'";    
         $result = $conn->query($sql);       
         if ($result->num_rows > 0){        
             while($row = $result->fetch_assoc()) {

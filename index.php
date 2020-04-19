@@ -11,14 +11,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <style>
-        body{
-            background-color: navy;
-        }
         .main{
-            padding: 100px;            
+            padding: 100px;
         }  
         li{            
-            width: 267px;        
+            width: 267px;
         }         
         .myBtn{
             padding: 20px 18px;
@@ -27,7 +24,7 @@
             width: 80px;
         }
         .buton{
-            width: 120px;
+            width: 100px;
         }
         .edit{
             position: absolute;
@@ -52,7 +49,7 @@
         .trash:hover{
             background-color: red;
             color: white;
-        }               
+        }       
     </style>
 
     <title>Database</title>
@@ -66,7 +63,7 @@
                 </button>
             </a>
         </div>       
-        <?php include "my.php";?>               
+        <?php include "display.php";?>               
     </div>   
       
     <!-- Optional JavaScript -->
